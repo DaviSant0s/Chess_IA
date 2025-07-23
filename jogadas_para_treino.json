@@ -1,0 +1,1107 @@
+[
+  {
+    "fen_antes": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+    "jogada": "e2e4",
+    "label": null
+  },
+  {
+    "fen_antes": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1",
+    "jogada": "e7e6",
+    "label": null
+  },
+  {
+    "fen_antes": "rnbqkbnr/pppp1ppp/4p3/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+    "jogada": "d2d4",
+    "label": null
+  },
+  {
+    "fen_antes": "rnbqkbnr/pppp1ppp/4p3/8/3PP3/8/PPP2PPP/RNBQKBNR b KQkq - 0 2",
+    "jogada": "b7b6",
+    "label": null
+  },
+  {
+    "fen_antes": "rnbqkbnr/p1pp1ppp/1p2p3/8/3PP3/8/PPP2PPP/RNBQKBNR w KQkq - 0 3",
+    "jogada": "a2a3",
+    "label": null
+  },
+  {
+    "fen_antes": "rnbqkbnr/p1pp1ppp/1p2p3/8/3PP3/P7/1PP2PPP/RNBQKBNR b KQkq - 0 3",
+    "jogada": "c8b7",
+    "label": null
+  },
+  {
+    "fen_antes": "rn1qkbnr/pbpp1ppp/1p2p3/8/3PP3/P7/1PP2PPP/RNBQKBNR w KQkq - 1 4",
+    "jogada": "b1c3",
+    "label": null
+  },
+  {
+    "fen_antes": "rn1qkbnr/pbpp1ppp/1p2p3/8/3PP3/P1N5/1PP2PPP/R1BQKBNR b KQkq - 2 4",
+    "jogada": "g8h6",
+    "label": null
+  },
+  {
+    "fen_antes": "rn1qkb1r/pbpp1ppp/1p2p2n/8/3PP3/P1N5/1PP2PPP/R1BQKBNR w KQkq - 3 5",
+    "jogada": "c1h6",
+    "label": null
+  },
+  {
+    "fen_antes": "rn1qkb1r/pbpp1ppp/1p2p2B/8/3PP3/P1N5/1PP2PPP/R2QKBNR b KQkq - 0 5",
+    "jogada": "g7h6",
+    "label": null
+  },
+  {
+    "fen_antes": "rn1qkb1r/pbpp1p1p/1p2p2p/8/3PP3/P1N5/1PP2PPP/R2QKBNR w KQkq - 0 6",
+    "jogada": "f1e2",
+    "label": null
+  },
+  {
+    "fen_antes": "rn1qkb1r/pbpp1p1p/1p2p2p/8/3PP3/P1N5/1PP1BPPP/R2QK1NR b KQkq - 1 6",
+    "jogada": "d8g5",
+    "label": null
+  },
+  {
+    "fen_antes": "rn2kb1r/pbpp1p1p/1p2p2p/6q1/3PP3/P1N5/1PP1BPPP/R2QK1NR w KQkq - 2 7",
+    "jogada": "e2g4",
+    "label": null
+  },
+  {
+    "fen_antes": "rn2kb1r/pbpp1p1p/1p2p2p/6q1/3PP1B1/P1N5/1PP2PPP/R2QK1NR b KQkq - 3 7",
+    "jogada": "h6h5",
+    "label": null
+  },
+  {
+    "fen_antes": "rn2kb1r/pbpp1p1p/1p2p3/6qp/3PP1B1/P1N5/1PP2PPP/R2QK1NR w KQkq - 0 8",
+    "jogada": "g1f3",
+    "label": null
+  },
+  {
+    "fen_antes": "rn2kb1r/pbpp1p1p/1p2p3/6qp/3PP1B1/P1N2N2/1PP2PPP/R2QK2R b KQkq - 1 8",
+    "jogada": "g5g6",
+    "label": null
+  },
+  {
+    "fen_antes": "rn2kb1r/pbpp1p1p/1p2p1q1/7p/3PP1B1/P1N2N2/1PP2PPP/R2QK2R w KQkq - 2 9",
+    "jogada": "f3h4",
+    "label": null
+  },
+  {
+    "fen_antes": "rn2kb1r/pbpp1p1p/1p2p1q1/7p/3PP1BN/P1N5/1PP2PPP/R2QK2R b KQkq - 3 9",
+    "jogada": "g6g5",
+    "label": null
+  },
+  {
+    "fen_antes": "rn2kb1r/pbpp1p1p/1p2p3/6qp/3PP1BN/P1N5/1PP2PPP/R2QK2R w KQkq - 4 10",
+    "jogada": "g4h5",
+    "label": null
+  },
+  {
+    "fen_antes": "rn2kb1r/pbpp1p1p/1p2p3/6qB/3PP2N/P1N5/1PP2PPP/R2QK2R b KQkq - 0 10",
+    "jogada": "g5h4",
+    "label": null
+  },
+  {
+    "fen_antes": "rn2kb1r/pbpp1p1p/1p2p3/7B/3PP2q/P1N5/1PP2PPP/R2QK2R w KQkq - 0 11",
+    "jogada": "d1f3",
+    "label": null
+  },
+  {
+    "fen_antes": "rn2kb1r/pbpp1p1p/1p2p3/7B/3PP2q/P1N2Q2/1PP2PPP/R3K2R b KQkq - 1 11",
+    "jogada": "e8d8",
+    "label": null
+  },
+  {
+    "fen_antes": "rn1k1b1r/pbpp1p1p/1p2p3/7B/3PP2q/P1N2Q2/1PP2PPP/R3K2R w KQ - 2 12",
+    "jogada": "f3f7",
+    "label": null
+  },
+  {
+    "fen_antes": "rn1k1b1r/pbpp1Q1p/1p2p3/7B/3PP2q/P1N5/1PP2PPP/R3K2R b KQ - 0 12",
+    "jogada": "b8c6",
+    "label": null
+  },
+  {
+    "fen_antes": "r2k1b1r/pbpp1Q1p/1pn1p3/7B/3PP2q/P1N5/1PP2PPP/R3K2R w KQ - 1 13",
+    "jogada": "f7e8",
+    "label": null
+  },
+  {
+    "fen_antes": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+    "jogada": "d2d4",
+    "label": null
+  },
+  {
+    "fen_antes": "rnbqkbnr/pppppppp/8/8/3P4/8/PPP1PPPP/RNBQKBNR b KQkq - 0 1",
+    "jogada": "d7d5",
+    "label": null
+  },
+  {
+    "fen_antes": "rnbqkbnr/ppp1pppp/8/3p4/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 0 2",
+    "jogada": "g1f3",
+    "label": null
+  },
+  {
+    "fen_antes": "rnbqkbnr/ppp1pppp/8/3p4/3P4/5N2/PPP1PPPP/RNBQKB1R b KQkq - 1 2",
+    "jogada": "g8f6",
+    "label": null
+  },
+  {
+    "fen_antes": "rnbqkb1r/ppp1pppp/5n2/3p4/3P4/5N2/PPP1PPPP/RNBQKB1R w KQkq - 2 3",
+    "jogada": "e2e3",
+    "label": null
+  },
+  {
+    "fen_antes": "rnbqkb1r/ppp1pppp/5n2/3p4/3P4/4PN2/PPP2PPP/RNBQKB1R b KQkq - 0 3",
+    "jogada": "c8f5",
+    "label": null
+  },
+  {
+    "fen_antes": "rn1qkb1r/ppp1pppp/5n2/3p1b2/3P4/4PN2/PPP2PPP/RNBQKB1R w KQkq - 1 4",
+    "jogada": "f3h4",
+    "label": null
+  },
+  {
+    "fen_antes": "rn1qkb1r/ppp1pppp/5n2/3p1b2/3P3N/4P3/PPP2PPP/RNBQKB1R b KQkq - 2 4",
+    "jogada": "f5g6",
+    "label": null
+  },
+  {
+    "fen_antes": "rn1qkb1r/ppp1pppp/5nb1/3p4/3P3N/4P3/PPP2PPP/RNBQKB1R w KQkq - 3 5",
+    "jogada": "h4g6",
+    "label": null
+  },
+  {
+    "fen_antes": "rn1qkb1r/ppp1pppp/5nN1/3p4/3P4/4P3/PPP2PPP/RNBQKB1R b KQkq - 0 5",
+    "jogada": "h7g6",
+    "label": null
+  },
+  {
+    "fen_antes": "rn1qkb1r/ppp1ppp1/5np1/3p4/3P4/4P3/PPP2PPP/RNBQKB1R w KQkq - 0 6",
+    "jogada": "b1d2",
+    "label": null
+  },
+  {
+    "fen_antes": "rn1qkb1r/ppp1ppp1/5np1/3p4/3P4/4P3/PPPN1PPP/R1BQKB1R b KQkq - 1 6",
+    "jogada": "e7e6",
+    "label": null
+  },
+  {
+    "fen_antes": "rn1qkb1r/ppp2pp1/4pnp1/3p4/3P4/4P3/PPPN1PPP/R1BQKB1R w KQkq - 0 7",
+    "jogada": "f1d3",
+    "label": null
+  },
+  {
+    "fen_antes": "rn1qkb1r/ppp2pp1/4pnp1/3p4/3P4/3BP3/PPPN1PPP/R1BQK2R b KQkq - 1 7",
+    "jogada": "f8d6",
+    "label": null
+  },
+  {
+    "fen_antes": "rn1qk2r/ppp2pp1/3bpnp1/3p4/3P4/3BP3/PPPN1PPP/R1BQK2R w KQkq - 2 8",
+    "jogada": "e3e4",
+    "label": null
+  },
+  {
+    "fen_antes": "rn1qk2r/ppp2pp1/3bpnp1/3p4/3PP3/3B4/PPPN1PPP/R1BQK2R b KQkq - 0 8",
+    "jogada": "d5e4",
+    "label": null
+  },
+  {
+    "fen_antes": "rn1qk2r/ppp2pp1/3bpnp1/8/3Pp3/3B4/PPPN1PPP/R1BQK2R w KQkq - 0 9",
+    "jogada": "d2e4",
+    "label": null
+  },
+  {
+    "fen_antes": "rn1qk2r/ppp2pp1/3bpnp1/8/3PN3/3B4/PPP2PPP/R1BQK2R b KQkq - 0 9",
+    "jogada": "h8h2",
+    "label": null
+  },
+  {
+    "fen_antes": "rn1qk3/ppp2pp1/3bpnp1/8/3PN3/3B4/PPP2PPr/R1BQK2R w KQq - 0 10",
+    "jogada": "e1e2",
+    "label": null
+  },
+  {
+    "fen_antes": "rn1qk3/ppp2pp1/3bpnp1/8/3PN3/3B4/PPP1KPPr/R1BQ3R b q - 1 10",
+    "jogada": "h2h1",
+    "label": null
+  },
+  {
+    "fen_antes": "rn1qk3/ppp2pp1/3bpnp1/8/3PN3/3B4/PPP1KPP1/R1BQ3r w q - 0 11",
+    "jogada": "d1h1",
+    "label": null
+  },
+  {
+    "fen_antes": "rn1qk3/ppp2pp1/3bpnp1/8/3PN3/3B4/PPP1KPP1/R1B4Q b q - 0 11",
+    "jogada": "b8c6",
+    "label": null
+  },
+  {
+    "fen_antes": "r2qk3/ppp2pp1/2nbpnp1/8/3PN3/3B4/PPP1KPP1/R1B4Q w q - 1 12",
+    "jogada": "c1g5",
+    "label": null
+  },
+  {
+    "fen_antes": "r2qk3/ppp2pp1/2nbpnp1/6B1/3PN3/3B4/PPP1KPP1/R6Q b q - 2 12",
+    "jogada": "e8e7",
+    "label": null
+  },
+  {
+    "fen_antes": "r2q4/ppp1kpp1/2nbpnp1/6B1/3PN3/3B4/PPP1KPP1/R6Q w - - 3 13",
+    "jogada": "h1h7",
+    "label": null
+  },
+  {
+    "fen_antes": "r2q4/ppp1kppQ/2nbpnp1/6B1/3PN3/3B4/PPP1KPP1/R7 b - - 4 13",
+    "jogada": "c6d4",
+    "label": null
+  },
+  {
+    "fen_antes": "r2q4/ppp1kppQ/3bpnp1/6B1/3nN3/3B4/PPP1KPP1/R7 w - - 0 14",
+    "jogada": "e2d2",
+    "label": null
+  },
+  {
+    "fen_antes": "r2q4/ppp1kppQ/3bpnp1/6B1/3nN3/3B4/PPPK1PP1/R7 b - - 1 14",
+    "jogada": "d8e8",
+    "label": null
+  },
+  {
+    "fen_antes": "r3q3/ppp1kppQ/3bpnp1/6B1/3nN3/3B4/PPPK1PP1/R7 w - - 2 15",
+    "jogada": "h7g7",
+    "label": null
+  },
+  {
+    "fen_antes": "r3q3/ppp1kpQ1/3bpnp1/6B1/3nN3/3B4/PPPK1PP1/R7 b - - 0 15",
+    "jogada": "e8h8",
+    "label": null
+  },
+  {
+    "fen_antes": "r6q/ppp1kpQ1/3bpnp1/6B1/3nN3/3B4/PPPK1PP1/R7 w - - 1 16",
+    "jogada": "g5f6",
+    "label": null
+  },
+  {
+    "fen_antes": "r6q/ppp1kpQ1/3bpBp1/8/3nN3/3B4/PPPK1PP1/R7 b - - 0 16",
+    "jogada": "e7d7",
+    "label": null
+  },
+  {
+    "fen_antes": "r6q/pppk1pQ1/3bpBp1/8/3nN3/3B4/PPPK1PP1/R7 w - - 1 17",
+    "jogada": "g7h8",
+    "label": null
+  },
+  {
+    "fen_antes": "r6Q/pppk1p2/3bpBp1/8/3nN3/3B4/PPPK1PP1/R7 b - - 0 17",
+    "jogada": "a8h8",
+    "label": null
+  },
+  {
+    "fen_antes": "7r/pppk1p2/3bpBp1/8/3nN3/3B4/PPPK1PP1/R7 w - - 0 18",
+    "jogada": "f6h8",
+    "label": null
+  },
+  {
+    "fen_antes": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+    "jogada": "e2e4",
+    "label": null
+  },
+  {
+    "fen_antes": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1",
+    "jogada": "e7e5",
+    "label": null
+  },
+  {
+    "fen_antes": "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+    "jogada": "g1f3",
+    "label": null
+  },
+  {
+    "fen_antes": "rnbqkbnr/pppp1ppp/8/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 2",
+    "jogada": "b8c6",
+    "label": null
+  },
+  {
+    "fen_antes": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3",
+    "jogada": "f1c4",
+    "label": null
+  },
+  {
+    "fen_antes": "r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3",
+    "jogada": "g8f6",
+    "label": null
+  },
+  {
+    "fen_antes": "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4",
+    "jogada": "b1c3",
+    "label": null
+  },
+  {
+    "fen_antes": "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R b KQkq - 5 4",
+    "jogada": "f8c5",
+    "label": null
+  },
+  {
+    "fen_antes": "r1bqk2r/pppp1ppp/2n2n2/2b1p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 6 5",
+    "jogada": "a2a3",
+    "label": null
+  },
+  {
+    "fen_antes": "r1bqk2r/pppp1ppp/2n2n2/2b1p3/2B1P3/P1N2N2/1PPP1PPP/R1BQK2R b KQkq - 0 5",
+    "jogada": "c5f2",
+    "label": null
+  },
+  {
+    "fen_antes": "r1bqk2r/pppp1ppp/2n2n2/4p3/2B1P3/P1N2N2/1PPP1bPP/R1BQK2R w KQkq - 0 6",
+    "jogada": "e1f2",
+    "label": null
+  },
+  {
+    "fen_antes": "r1bqk2r/pppp1ppp/2n2n2/4p3/2B1P3/P1N2N2/1PPP1KPP/R1BQ3R b kq - 0 6",
+    "jogada": "c6d4",
+    "label": null
+  },
+  {
+    "fen_antes": "r1bqk2r/pppp1ppp/5n2/4p3/2BnP3/P1N2N2/1PPP1KPP/R1BQ3R w kq - 1 7",
+    "jogada": "d2d3",
+    "label": null
+  },
+  {
+    "fen_antes": "r1bqk2r/pppp1ppp/5n2/4p3/2BnP3/P1NP1N2/1PP2KPP/R1BQ3R b kq - 0 7",
+    "jogada": "f6g4",
+    "label": null
+  },
+  {
+    "fen_antes": "r1bqk2r/pppp1ppp/8/4p3/2BnP1n1/P1NP1N2/1PP2KPP/R1BQ3R w kq - 1 8",
+    "jogada": "f2f1",
+    "label": null
+  },
+  {
+    "fen_antes": "r1bqk2r/pppp1ppp/8/4p3/2BnP1n1/P1NP1N2/1PP3PP/R1BQ1K1R b kq - 2 8",
+    "jogada": "d8f6",
+    "label": null
+  },
+  {
+    "fen_antes": "r1b1k2r/pppp1ppp/5q2/4p3/2BnP1n1/P1NP1N2/1PP3PP/R1BQ1K1R w kq - 3 9",
+    "jogada": "h2h3",
+    "label": null
+  },
+  {
+    "fen_antes": "r1b1k2r/pppp1ppp/5q2/4p3/2BnP1n1/P1NP1N1P/1PP3P1/R1BQ1K1R b kq - 0 9",
+    "jogada": "d7d5",
+    "label": null
+  },
+  {
+    "fen_antes": "r1b1k2r/ppp2ppp/5q2/3pp3/2BnP1n1/P1NP1N1P/1PP3P1/R1BQ1K1R w kq - 0 10",
+    "jogada": "c3d5",
+    "label": null
+  },
+  {
+    "fen_antes": "r1b1k2r/ppp2ppp/5q2/3Np3/2BnP1n1/P2P1N1P/1PP3P1/R1BQ1K1R b kq - 0 10",
+    "jogada": "f6e6",
+    "label": null
+  },
+  {
+    "fen_antes": "r1b1k2r/ppp2ppp/4q3/3Np3/2BnP1n1/P2P1N1P/1PP3P1/R1BQ1K1R w kq - 1 11",
+    "jogada": "d5c7",
+    "label": null
+  },
+  {
+    "fen_antes": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+    "jogada": "e2e4",
+    "label": null
+  },
+  {
+    "fen_antes": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1",
+    "jogada": "c7c6",
+    "label": null
+  },
+  {
+    "fen_antes": "rnbqkbnr/pp1ppppp/2p5/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+    "jogada": "b1c3",
+    "label": null
+  },
+  {
+    "fen_antes": "rnbqkbnr/pp1ppppp/2p5/8/4P3/2N5/PPPP1PPP/R1BQKBNR b KQkq - 1 2",
+    "jogada": "d7d5",
+    "label": null
+  },
+  {
+    "fen_antes": "rnbqkbnr/pp2pppp/2p5/3p4/4P3/2N5/PPPP1PPP/R1BQKBNR w KQkq - 0 3",
+    "jogada": "d1f3",
+    "label": null
+  },
+  {
+    "fen_antes": "rnbqkbnr/pp2pppp/2p5/3p4/4P3/2N2Q2/PPPP1PPP/R1B1KBNR b KQkq - 1 3",
+    "jogada": "d5e4",
+    "label": null
+  },
+  {
+    "fen_antes": "rnbqkbnr/pp2pppp/2p5/8/4p3/2N2Q2/PPPP1PPP/R1B1KBNR w KQkq - 0 4",
+    "jogada": "c3e4",
+    "label": null
+  },
+  {
+    "fen_antes": "rnbqkbnr/pp2pppp/2p5/8/4N3/5Q2/PPPP1PPP/R1B1KBNR b KQkq - 0 4",
+    "jogada": "b8d7",
+    "label": null
+  },
+  {
+    "fen_antes": "r1bqkbnr/pp1npppp/2p5/8/4N3/5Q2/PPPP1PPP/R1B1KBNR w KQkq - 1 5",
+    "jogada": "f1c4",
+    "label": null
+  },
+  {
+    "fen_antes": "r1bqkbnr/pp1npppp/2p5/8/2B1N3/5Q2/PPPP1PPP/R1B1K1NR b KQkq - 2 5",
+    "jogada": "g8f6",
+    "label": null
+  },
+  {
+    "fen_antes": "r1bqkb1r/pp1npppp/2p2n2/8/2B1N3/5Q2/PPPP1PPP/R1B1K1NR w KQkq - 3 6",
+    "jogada": "e4f6",
+    "label": null
+  },
+  {
+    "fen_antes": "r1bqkb1r/pp1npppp/2p2N2/8/2B5/5Q2/PPPP1PPP/R1B1K1NR b KQkq - 0 6",
+    "jogada": "d7f6",
+    "label": null
+  },
+  {
+    "fen_antes": "r1bqkb1r/pp2pppp/2p2n2/8/2B5/5Q2/PPPP1PPP/R1B1K1NR w KQkq - 0 7",
+    "jogada": "f3g3",
+    "label": null
+  },
+  {
+    "fen_antes": "r1bqkb1r/pp2pppp/2p2n2/8/2B5/6Q1/PPPP1PPP/R1B1K1NR b KQkq - 1 7",
+    "jogada": "c8f5",
+    "label": null
+  },
+  {
+    "fen_antes": "r2qkb1r/pp2pppp/2p2n2/5b2/2B5/6Q1/PPPP1PPP/R1B1K1NR w KQkq - 2 8",
+    "jogada": "d2d3",
+    "label": null
+  },
+  {
+    "fen_antes": "r2qkb1r/pp2pppp/2p2n2/5b2/2B5/3P2Q1/PPP2PPP/R1B1K1NR b KQkq - 0 8",
+    "jogada": "f5g6",
+    "label": null
+  },
+  {
+    "fen_antes": "r2qkb1r/pp2pppp/2p2nb1/8/2B5/3P2Q1/PPP2PPP/R1B1K1NR w KQkq - 1 9",
+    "jogada": "g1e2",
+    "label": null
+  },
+  {
+    "fen_antes": "r2qkb1r/pp2pppp/2p2nb1/8/2B5/3P2Q1/PPP1NPPP/R1B1K2R b KQkq - 2 9",
+    "jogada": "e7e6",
+    "label": null
+  },
+  {
+    "fen_antes": "r2qkb1r/pp3ppp/2p1pnb1/8/2B5/3P2Q1/PPP1NPPP/R1B1K2R w KQkq - 0 10",
+    "jogada": "c1f4",
+    "label": null
+  },
+  {
+    "fen_antes": "r2qkb1r/pp3ppp/2p1pnb1/8/2B2B2/3P2Q1/PPP1NPPP/R3K2R b KQkq - 1 10",
+    "jogada": "f6h5",
+    "label": null
+  },
+  {
+    "fen_antes": "r2qkb1r/pp3ppp/2p1p1b1/7n/2B2B2/3P2Q1/PPP1NPPP/R3K2R w KQkq - 2 11",
+    "jogada": "g3f3",
+    "label": null
+  },
+  {
+    "fen_antes": "r2qkb1r/pp3ppp/2p1p1b1/7n/2B2B2/3P1Q2/PPP1NPPP/R3K2R b KQkq - 3 11",
+    "jogada": "h5f4",
+    "label": null
+  },
+  {
+    "fen_antes": "r2qkb1r/pp3ppp/2p1p1b1/8/2B2n2/3P1Q2/PPP1NPPP/R3K2R w KQkq - 0 12",
+    "jogada": "e2f4",
+    "label": null
+  },
+  {
+    "fen_antes": "r2qkb1r/pp3ppp/2p1p1b1/8/2B2N2/3P1Q2/PPP2PPP/R3K2R b KQkq - 0 12",
+    "jogada": "f8e7",
+    "label": null
+  },
+  {
+    "fen_antes": "r2qk2r/pp2bppp/2p1p1b1/8/2B2N2/3P1Q2/PPP2PPP/R3K2R w KQkq - 1 13",
+    "jogada": "c4e6",
+    "label": null
+  },
+  {
+    "fen_antes": "r2qk2r/pp2bppp/2p1B1b1/8/5N2/3P1Q2/PPP2PPP/R3K2R b KQkq - 0 13",
+    "jogada": "f7e6",
+    "label": null
+  },
+  {
+    "fen_antes": "r2qk2r/pp2b1pp/2p1p1b1/8/5N2/3P1Q2/PPP2PPP/R3K2R w KQkq - 0 14",
+    "jogada": "f4e6",
+    "label": null
+  },
+  {
+    "fen_antes": "r2qk2r/pp2b1pp/2p1N1b1/8/8/3P1Q2/PPP2PPP/R3K2R b KQkq - 0 14",
+    "jogada": "d8a5",
+    "label": null
+  },
+  {
+    "fen_antes": "r3k2r/pp2b1pp/2p1N1b1/q7/8/3P1Q2/PPP2PPP/R3K2R w KQkq - 1 15",
+    "jogada": "c2c3",
+    "label": null
+  },
+  {
+    "fen_antes": "r3k2r/pp2b1pp/2p1N1b1/q7/8/2PP1Q2/PP3PPP/R3K2R b KQkq - 0 15",
+    "jogada": "a5e5",
+    "label": null
+  },
+  {
+    "fen_antes": "r3k2r/pp2b1pp/2p1N1b1/4q3/8/2PP1Q2/PP3PPP/R3K2R w KQkq - 1 16",
+    "jogada": "f3e3",
+    "label": null
+  },
+  {
+    "fen_antes": "r3k2r/pp2b1pp/2p1N1b1/4q3/8/2PPQ3/PP3PPP/R3K2R b KQkq - 2 16",
+    "jogada": "e5e3",
+    "label": null
+  },
+  {
+    "fen_antes": "r3k2r/pp2b1pp/2p1N1b1/8/8/2PPq3/PP3PPP/R3K2R w KQkq - 0 17",
+    "jogada": "f2e3",
+    "label": null
+  },
+  {
+    "fen_antes": "r3k2r/pp2b1pp/2p1N1b1/8/8/2PPP3/PP4PP/R3K2R b KQkq - 0 17",
+    "jogada": "e8d7",
+    "label": null
+  },
+  {
+    "fen_antes": "r6r/pp1kb1pp/2p1N1b1/8/8/2PPP3/PP4PP/R3K2R w KQ - 1 18",
+    "jogada": "e6f4",
+    "label": null
+  },
+  {
+    "fen_antes": "r6r/pp1kb1pp/2p3b1/8/5N2/2PPP3/PP4PP/R3K2R b KQ - 2 18",
+    "jogada": "e7d6",
+    "label": null
+  },
+  {
+    "fen_antes": "r6r/pp1k2pp/2pb2b1/8/5N2/2PPP3/PP4PP/R3K2R w KQ - 3 19",
+    "jogada": "f4g6",
+    "label": null
+  },
+  {
+    "fen_antes": "r6r/pp1k2pp/2pb2N1/8/8/2PPP3/PP4PP/R3K2R b KQ - 0 19",
+    "jogada": "h7g6",
+    "label": null
+  },
+  {
+    "fen_antes": "r6r/pp1k2p1/2pb2p1/8/8/2PPP3/PP4PP/R3K2R w KQ - 0 20",
+    "jogada": "h2h3",
+    "label": null
+  },
+  {
+    "fen_antes": "r6r/pp1k2p1/2pb2p1/8/8/2PPP2P/PP4P1/R3K2R b KQ - 0 20",
+    "jogada": "d6g3",
+    "label": null
+  },
+  {
+    "fen_antes": "r6r/pp1k2p1/2p3p1/8/8/2PPP1bP/PP4P1/R3K2R w KQ - 1 21",
+    "jogada": "e1d2",
+    "label": null
+  },
+  {
+    "fen_antes": "r6r/pp1k2p1/2p3p1/8/8/2PPP1bP/PP1K2P1/R6R b - - 2 21",
+    "jogada": "a8f8",
+    "label": null
+  },
+  {
+    "fen_antes": "5r1r/pp1k2p1/2p3p1/8/8/2PPP1bP/PP1K2P1/R6R w - - 3 22",
+    "jogada": "h1f1",
+    "label": null
+  },
+  {
+    "fen_antes": "5r1r/pp1k2p1/2p3p1/8/8/2PPP1bP/PP1K2P1/R4R2 b - - 4 22",
+    "jogada": "d7e7",
+    "label": null
+  },
+  {
+    "fen_antes": "5r1r/pp2k1p1/2p3p1/8/8/2PPP1bP/PP1K2P1/R4R2 w - - 5 23",
+    "jogada": "d3d4",
+    "label": null
+  },
+  {
+    "fen_antes": "5r1r/pp2k1p1/2p3p1/8/3P4/2P1P1bP/PP1K2P1/R4R2 b - - 0 23",
+    "jogada": "f8f1",
+    "label": null
+  },
+  {
+    "fen_antes": "7r/pp2k1p1/2p3p1/8/3P4/2P1P1bP/PP1K2P1/R4r2 w - - 0 24",
+    "jogada": "a1f1",
+    "label": null
+  },
+  {
+    "fen_antes": "7r/pp2k1p1/2p3p1/8/3P4/2P1P1bP/PP1K2P1/5R2 b - - 0 24",
+    "jogada": "h8f8",
+    "label": null
+  },
+  {
+    "fen_antes": "5r2/pp2k1p1/2p3p1/8/3P4/2P1P1bP/PP1K2P1/5R2 w - - 1 25",
+    "jogada": "f1f8",
+    "label": null
+  },
+  {
+    "fen_antes": "5R2/pp2k1p1/2p3p1/8/3P4/2P1P1bP/PP1K2P1/8 b - - 0 25",
+    "jogada": "e7f8",
+    "label": null
+  },
+  {
+    "fen_antes": "5k2/pp4p1/2p3p1/8/3P4/2P1P1bP/PP1K2P1/8 w - - 0 26",
+    "jogada": "e3e4",
+    "label": null
+  },
+  {
+    "fen_antes": "5k2/pp4p1/2p3p1/8/3PP3/2P3bP/PP1K2P1/8 b - - 0 26",
+    "jogada": "f8e7",
+    "label": null
+  },
+  {
+    "fen_antes": "8/pp2k1p1/2p3p1/8/3PP3/2P3bP/PP1K2P1/8 w - - 1 27",
+    "jogada": "d2e3",
+    "label": null
+  },
+  {
+    "fen_antes": "8/pp2k1p1/2p3p1/8/3PP3/2P1K1bP/PP4P1/8 b - - 2 27",
+    "jogada": "g6g5",
+    "label": null
+  },
+  {
+    "fen_antes": "8/pp2k1p1/2p5/6p1/3PP3/2P1K1bP/PP4P1/8 w - - 0 28",
+    "jogada": "e3f3",
+    "label": null
+  },
+  {
+    "fen_antes": "8/pp2k1p1/2p5/6p1/3PP3/2P2KbP/PP4P1/8 b - - 1 28",
+    "jogada": "g3e1",
+    "label": null
+  },
+  {
+    "fen_antes": "8/pp2k1p1/2p5/6p1/3PP3/2P2K1P/PP4P1/4b3 w - - 2 29",
+    "jogada": "f3g4",
+    "label": null
+  },
+  {
+    "fen_antes": "8/pp2k1p1/2p5/6p1/3PP1K1/2P4P/PP4P1/4b3 b - - 3 29",
+    "jogada": "e1d2",
+    "label": null
+  },
+  {
+    "fen_antes": "8/pp2k1p1/2p5/6p1/3PP1K1/2P4P/PP1b2P1/8 w - - 4 30",
+    "jogada": "g4f5",
+    "label": null
+  },
+  {
+    "fen_antes": "8/pp2k1p1/2p5/5Kp1/3PP3/2P4P/PP1b2P1/8 b - - 5 30",
+    "jogada": "d2c1",
+    "label": null
+  },
+  {
+    "fen_antes": "8/pp2k1p1/2p5/5Kp1/3PP3/2P4P/PP4P1/2b5 w - - 6 31",
+    "jogada": "f5g6",
+    "label": null
+  },
+  {
+    "fen_antes": "8/pp2k1p1/2p3K1/6p1/3PP3/2P4P/PP4P1/2b5 b - - 7 31",
+    "jogada": "e7f8",
+    "label": null
+  },
+  {
+    "fen_antes": "5k2/pp4p1/2p3K1/6p1/3PP3/2P4P/PP4P1/2b5 w - - 8 32",
+    "jogada": "e4e5",
+    "label": null
+  },
+  {
+    "fen_antes": "5k2/pp4p1/2p3K1/4P1p1/3P4/2P4P/PP4P1/2b5 b - - 0 32",
+    "jogada": "c1b2",
+    "label": null
+  },
+  {
+    "fen_antes": "5k2/pp4p1/2p3K1/4P1p1/3P4/2P4P/Pb4P1/8 w - - 0 33",
+    "jogada": "g6g5",
+    "label": null
+  },
+  {
+    "fen_antes": "5k2/pp4p1/2p5/4P1K1/3P4/2P4P/Pb4P1/8 b - - 0 33",
+    "jogada": "b2c3",
+    "label": null
+  },
+  {
+    "fen_antes": "5k2/pp4p1/2p5/4P1K1/3P4/2b4P/P5P1/8 w - - 0 34",
+    "jogada": "h3h4",
+    "label": null
+  },
+  {
+    "fen_antes": "5k2/pp4p1/2p5/4P1K1/3P3P/2b5/P5P1/8 b - - 0 34",
+    "jogada": "c3d4",
+    "label": null
+  },
+  {
+    "fen_antes": "5k2/pp4p1/2p5/4P1K1/3b3P/8/P5P1/8 w - - 0 35",
+    "jogada": "h4h5",
+    "label": null
+  },
+  {
+    "fen_antes": "5k2/pp4p1/2p5/4P1KP/3b4/8/P5P1/8 b - - 0 35",
+    "jogada": "d4e5",
+    "label": null
+  },
+  {
+    "fen_antes": "5k2/pp4p1/2p5/4b1KP/8/8/P5P1/8 w - - 0 36",
+    "jogada": "g2g4",
+    "label": null
+  },
+  {
+    "fen_antes": "5k2/pp4p1/2p5/4b1KP/6P1/8/P7/8 b - - 0 36",
+    "jogada": "e5b2",
+    "label": null
+  },
+  {
+    "fen_antes": "5k2/pp4p1/2p5/6KP/6P1/8/Pb6/8 w - - 1 37",
+    "jogada": "g5f5",
+    "label": null
+  },
+  {
+    "fen_antes": "5k2/pp4p1/2p5/5K1P/6P1/8/Pb6/8 b - - 2 37",
+    "jogada": "f8f7",
+    "label": null
+  },
+  {
+    "fen_antes": "8/pp3kp1/2p5/5K1P/6P1/8/Pb6/8 w - - 3 38",
+    "jogada": "g4g5",
+    "label": null
+  },
+  {
+    "fen_antes": "8/pp3kp1/2p5/5KPP/8/8/Pb6/8 b - - 0 38",
+    "jogada": "b2c1",
+    "label": null
+  },
+  {
+    "fen_antes": "8/pp3kp1/2p5/5KPP/8/8/P7/2b5 w - - 1 39",
+    "jogada": "g5g6",
+    "label": null
+  },
+  {
+    "fen_antes": "8/pp3kp1/2p3P1/5K1P/8/8/P7/2b5 b - - 0 39",
+    "jogada": "f7e7",
+    "label": null
+  },
+  {
+    "fen_antes": "8/pp2k1p1/2p3P1/5K1P/8/8/P7/2b5 w - - 1 40",
+    "jogada": "f5e5",
+    "label": null
+  },
+  {
+    "fen_antes": "8/pp2k1p1/2p3P1/4K2P/8/8/P7/2b5 b - - 2 40",
+    "jogada": "b7b5",
+    "label": null
+  },
+  {
+    "fen_antes": "8/p3k1p1/2p3P1/1p2K2P/8/8/P7/2b5 w - - 0 41",
+    "jogada": "e5d4",
+    "label": null
+  },
+  {
+    "fen_antes": "8/p3k1p1/2p3P1/1p5P/3K4/8/P7/2b5 b - - 1 41",
+    "jogada": "e7d6",
+    "label": null
+  },
+  {
+    "fen_antes": "8/p5p1/2pk2P1/1p5P/3K4/8/P7/2b5 w - - 2 42",
+    "jogada": "d4c3",
+    "label": null
+  },
+  {
+    "fen_antes": "8/p5p1/2pk2P1/1p5P/8/2K5/P7/2b5 b - - 3 42",
+    "jogada": "c6c5",
+    "label": null
+  },
+  {
+    "fen_antes": "8/p5p1/3k2P1/1pp4P/8/2K5/P7/2b5 w - - 0 43",
+    "jogada": "a2a3",
+    "label": null
+  },
+  {
+    "fen_antes": "8/p5p1/3k2P1/1pp4P/8/P1K5/8/2b5 b - - 0 43",
+    "jogada": "c1g5",
+    "label": null
+  },
+  {
+    "fen_antes": "8/p5p1/3k2P1/1pp3bP/8/P1K5/8/8 w - - 1 44",
+    "jogada": "a3a4",
+    "label": null
+  },
+  {
+    "fen_antes": "8/p5p1/3k2P1/1pp3bP/P7/2K5/8/8 b - - 0 44",
+    "jogada": "b5a4",
+    "label": null
+  },
+  {
+    "fen_antes": "8/p5p1/3k2P1/2p3bP/p7/2K5/8/8 w - - 0 45",
+    "jogada": "c3b2",
+    "label": null
+  },
+  {
+    "fen_antes": "8/p5p1/3k2P1/2p3bP/p7/8/1K6/8 b - - 1 45",
+    "jogada": "d6d5",
+    "label": null
+  },
+  {
+    "fen_antes": "8/p5p1/6P1/2pk2bP/p7/8/1K6/8 w - - 2 46",
+    "jogada": "b2a3",
+    "label": null
+  },
+  {
+    "fen_antes": "8/p5p1/6P1/2pk2bP/p7/K7/8/8 b - - 3 46",
+    "jogada": "d5d4",
+    "label": null
+  },
+  {
+    "fen_antes": "8/p5p1/6P1/2p3bP/p2k4/K7/8/8 w - - 4 47",
+    "jogada": "a3a4",
+    "label": null
+  },
+  {
+    "fen_antes": "8/p5p1/6P1/2p3bP/K2k4/8/8/8 b - - 0 47",
+    "jogada": "c5c4",
+    "label": null
+  },
+  {
+    "fen_antes": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+    "jogada": "e2e4",
+    "label": null
+  },
+  {
+    "fen_antes": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1",
+    "jogada": "e7e6",
+    "label": null
+  },
+  {
+    "fen_antes": "rnbqkbnr/pppp1ppp/4p3/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+    "jogada": "f2f4",
+    "label": null
+  },
+  {
+    "fen_antes": "rnbqkbnr/pppp1ppp/4p3/8/4PP2/8/PPPP2PP/RNBQKBNR b KQkq - 0 2",
+    "jogada": "d7d5",
+    "label": null
+  },
+  {
+    "fen_antes": "rnbqkbnr/ppp2ppp/4p3/3p4/4PP2/8/PPPP2PP/RNBQKBNR w KQkq - 0 3",
+    "jogada": "e4e5",
+    "label": null
+  },
+  {
+    "fen_antes": "rnbqkbnr/ppp2ppp/4p3/3pP3/5P2/8/PPPP2PP/RNBQKBNR b KQkq - 0 3",
+    "jogada": "c7c5",
+    "label": null
+  },
+  {
+    "fen_antes": "rnbqkbnr/pp3ppp/4p3/2ppP3/5P2/8/PPPP2PP/RNBQKBNR w KQkq - 0 4",
+    "jogada": "g1f3",
+    "label": null
+  },
+  {
+    "fen_antes": "rnbqkbnr/pp3ppp/4p3/2ppP3/5P2/5N2/PPPP2PP/RNBQKB1R b KQkq - 1 4",
+    "jogada": "d8b6",
+    "label": null
+  },
+  {
+    "fen_antes": "rnb1kbnr/pp3ppp/1q2p3/2ppP3/5P2/5N2/PPPP2PP/RNBQKB1R w KQkq - 2 5",
+    "jogada": "c2c3",
+    "label": null
+  },
+  {
+    "fen_antes": "rnb1kbnr/pp3ppp/1q2p3/2ppP3/5P2/2P2N2/PP1P2PP/RNBQKB1R b KQkq - 0 5",
+    "jogada": "b8c6",
+    "label": null
+  },
+  {
+    "fen_antes": "r1b1kbnr/pp3ppp/1qn1p3/2ppP3/5P2/2P2N2/PP1P2PP/RNBQKB1R w KQkq - 1 6",
+    "jogada": "d2d3",
+    "label": null
+  },
+  {
+    "fen_antes": "r1b1kbnr/pp3ppp/1qn1p3/2ppP3/5P2/2PP1N2/PP4PP/RNBQKB1R b KQkq - 0 6",
+    "jogada": "c8d7",
+    "label": null
+  },
+  {
+    "fen_antes": "r3kbnr/pp1b1ppp/1qn1p3/2ppP3/5P2/2PP1N2/PP4PP/RNBQKB1R w KQkq - 1 7",
+    "jogada": "f1e2",
+    "label": null
+  },
+  {
+    "fen_antes": "r3kbnr/pp1b1ppp/1qn1p3/2ppP3/5P2/2PP1N2/PP2B1PP/RNBQK2R b KQkq - 2 7",
+    "jogada": "g8h6",
+    "label": null
+  },
+  {
+    "fen_antes": "r3kb1r/pp1b1ppp/1qn1p2n/2ppP3/5P2/2PP1N2/PP2B1PP/RNBQK2R w KQkq - 3 8",
+    "jogada": "e1g1",
+    "label": null
+  },
+  {
+    "fen_antes": "r3kb1r/pp1b1ppp/1qn1p2n/2ppP3/5P2/2PP1N2/PP2B1PP/RNBQ1RK1 b kq - 4 8",
+    "jogada": "h6f5",
+    "label": null
+  },
+  {
+    "fen_antes": "r3kb1r/pp1b1ppp/1qn1p3/2ppPn2/5P2/2PP1N2/PP2B1PP/RNBQ1RK1 w kq - 5 9",
+    "jogada": "g2g4",
+    "label": null
+  },
+  {
+    "fen_antes": "r3kb1r/pp1b1ppp/1qn1p3/2ppPn2/5PP1/2PP1N2/PP2B2P/RNBQ1RK1 b kq - 0 9",
+    "jogada": "f5h6",
+    "label": null
+  },
+  {
+    "fen_antes": "r3kb1r/pp1b1ppp/1qn1p2n/2ppP3/5PP1/2PP1N2/PP2B2P/RNBQ1RK1 w kq - 1 10",
+    "jogada": "g1g2",
+    "label": null
+  },
+  {
+    "fen_antes": "r3kb1r/pp1b1ppp/1qn1p2n/2ppP3/5PP1/2PP1N2/PP2B1KP/RNBQ1R2 b kq - 2 10",
+    "jogada": "h6g4",
+    "label": null
+  },
+  {
+    "fen_antes": "r3kb1r/pp1b1ppp/1qn1p3/2ppP3/5Pn1/2PP1N2/PP2B1KP/RNBQ1R2 w kq - 0 11",
+    "jogada": "h2h3",
+    "label": null
+  },
+  {
+    "fen_antes": "r3kb1r/pp1b1ppp/1qn1p3/2ppP3/5Pn1/2PP1N1P/PP2B1K1/RNBQ1R2 b kq - 0 11",
+    "jogada": "g4h6",
+    "label": null
+  },
+  {
+    "fen_antes": "r3kb1r/pp1b1ppp/1qn1p2n/2ppP3/5P2/2PP1N1P/PP2B1K1/RNBQ1R2 w kq - 1 12",
+    "jogada": "f3g5",
+    "label": null
+  },
+  {
+    "fen_antes": "r3kb1r/pp1b1ppp/1qn1p2n/2ppP1N1/5P2/2PP3P/PP2B1K1/RNBQ1R2 b kq - 2 12",
+    "jogada": "h6f5",
+    "label": null
+  },
+  {
+    "fen_antes": "r3kb1r/pp1b1ppp/1qn1p3/2ppPnN1/5P2/2PP3P/PP2B1K1/RNBQ1R2 w kq - 3 13",
+    "jogada": "e2g4",
+    "label": null
+  },
+  {
+    "fen_antes": "r3kb1r/pp1b1ppp/1qn1p3/2ppPnN1/5PB1/2PP3P/PP4K1/RNBQ1R2 b kq - 4 13",
+    "jogada": "c6e7",
+    "label": null
+  },
+  {
+    "fen_antes": "r3kb1r/pp1bnppp/1q2p3/2ppPnN1/5PB1/2PP3P/PP4K1/RNBQ1R2 w kq - 5 14",
+    "jogada": "b1d2",
+    "label": null
+  },
+  {
+    "fen_antes": "r3kb1r/pp1bnppp/1q2p3/2ppPnN1/5PB1/2PP3P/PP1N2K1/R1BQ1R2 b kq - 6 14",
+    "jogada": "f5e3",
+    "label": null
+  },
+  {
+    "fen_antes": "r3kb1r/pp1bnppp/1q2p3/2ppP1N1/5PB1/2PPn2P/PP1N2K1/R1BQ1R2 w kq - 7 15",
+    "jogada": "g2f3",
+    "label": null
+  },
+  {
+    "fen_antes": "r3kb1r/pp1bnppp/1q2p3/2ppP1N1/5PB1/2PPnK1P/PP1N4/R1BQ1R2 b kq - 8 15",
+    "jogada": "e3d1",
+    "label": null
+  },
+  {
+    "fen_antes": "r3kb1r/pp1bnppp/1q2p3/2ppP1N1/5PB1/2PP1K1P/PP1N4/R1Bn1R2 w kq - 0 16",
+    "jogada": "f1d1",
+    "label": null
+  },
+  {
+    "fen_antes": "r3kb1r/pp1bnppp/1q2p3/2ppP1N1/5PB1/2PP1K1P/PP1N4/R1BR4 b kq - 0 16",
+    "jogada": "h7h6",
+    "label": null
+  },
+  {
+    "fen_antes": "r3kb1r/pp1bnpp1/1q2p2p/2ppP1N1/5PB1/2PP1K1P/PP1N4/R1BR4 w kq - 0 17",
+    "jogada": "g5f7",
+    "label": null
+  },
+  {
+    "fen_antes": "r3kb1r/pp1bnNp1/1q2p2p/2ppP3/5PB1/2PP1K1P/PP1N4/R1BR4 b kq - 0 17",
+    "jogada": "e8f7",
+    "label": null
+  },
+  {
+    "fen_antes": "r4b1r/pp1bnkp1/1q2p2p/2ppP3/5PB1/2PP1K1P/PP1N4/R1BR4 w - - 0 18",
+    "jogada": "d1f1",
+    "label": null
+  },
+  {
+    "fen_antes": "r4b1r/pp1bnkp1/1q2p2p/2ppP3/5PB1/2PP1K1P/PP1N4/R1B2R2 b - - 1 18",
+    "jogada": "h6h5",
+    "label": null
+  },
+  {
+    "fen_antes": "r4b1r/pp1bnkp1/1q2p3/2ppP2p/5PB1/2PP1K1P/PP1N4/R1B2R2 w - - 0 19",
+    "jogada": "g4e6",
+    "label": null
+  },
+  {
+    "fen_antes": "r4b1r/pp1bnkp1/1q2B3/2ppP2p/5P2/2PP1K1P/PP1N4/R1B2R2 b - - 0 19",
+    "jogada": "d7e6",
+    "label": null
+  },
+  {
+    "fen_antes": "r4b1r/pp2nkp1/1q2b3/2ppP2p/5P2/2PP1K1P/PP1N4/R1B2R2 w - - 0 20",
+    "jogada": "f3g3",
+    "label": null
+  },
+  {
+    "fen_antes": "r4b1r/pp2nkp1/1q2b3/2ppP2p/5P2/2PP2KP/PP1N4/R1B2R2 b - - 1 20",
+    "jogada": "e7f5",
+    "label": null
+  },
+  {
+    "fen_antes": "r4b1r/pp3kp1/1q2b3/2ppPn1p/5P2/2PP2KP/PP1N4/R1B2R2 w - - 2 21",
+    "jogada": "g3g2",
+    "label": null
+  },
+  {
+    "fen_antes": "r4b1r/pp3kp1/1q2b3/2ppPn1p/5P2/2PP3P/PP1N2K1/R1B2R2 b - - 3 21",
+    "jogada": "f5e3",
+    "label": null
+  },
+  {
+    "fen_antes": "r4b1r/pp3kp1/1q2b3/2ppP2p/5P2/2PPn2P/PP1N2K1/R1B2R2 w - - 4 22",
+    "jogada": "g2f2",
+    "label": null
+  },
+  {
+    "fen_antes": "r4b1r/pp3kp1/1q2b3/2ppP2p/5P2/2PPn2P/PP1N1K2/R1B2R2 b - - 5 22",
+    "jogada": "e3f1",
+    "label": null
+  },
+  {
+    "fen_antes": "r4b1r/pp3kp1/1q2b3/2ppP2p/5P2/2PP3P/PP1N1K2/R1B2n2 w - - 0 23",
+    "jogada": "f2f1",
+    "label": null
+  },
+  {
+    "fen_antes": "r4b1r/pp3kp1/1q2b3/2ppP2p/5P2/2PP3P/PP1N4/R1B2K2 b - - 0 23",
+    "jogada": "e6h3",
+    "label": null
+  }
+]
