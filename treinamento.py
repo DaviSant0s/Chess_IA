@@ -86,11 +86,6 @@ def treinar_modelo():
     train_loader = DataLoader(train_dataset, batch_size=32, shuffle=True)
     test_loader = DataLoader(test_dataset, batch_size=32)
 
-    # - Cria uma instância da CNN (ChessClassifier) e a move para o dispositivo (cuda ou cpu).
-    # - Usa o otimizador Adam com taxa de aprendizado lr=0.001 para atualizar os pesos do modelo.
-    # - Usa CrossEntropyLoss como função de perda, que combina log-softmax e perda de entropia 
-    # cruzada para classificação multiclasse (4 classes).
-
     model = ChessClassifier().to(device)
     optimizer = optim.Adam(model.parameters(), lr=0.001)
     criterion = nn.CrossEntropyLoss()
