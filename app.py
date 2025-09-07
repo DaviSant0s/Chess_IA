@@ -4,8 +4,10 @@ import torch.nn.functional as F
 import chess
 import chess.engine
 from treinamento import ChessClassifier, fen_para_tensor, label_to_idx
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)  # permite todas as origens
 
 # Configuração do dispositivo e modelo
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -33,6 +35,16 @@ def evaluate_move(fen, move_uci):
 @app.route("/", methods=["GET"])
 def home():
     return jsonify({"message": "Bem-vindo! A API de ChessIA está online e pronta para usar."})
+
+# Endpoint para retornar o estado atual do tabuleiro e de quem é a vez
+@app.route("/state", methods=["GET"])
+def state():
+    fen = board.fen()
+    turn = "white" if board.turn else "black"
+    return jsonify({
+        "fen": fen,
+        "turn": turn
+    })
 
 # Endpoint para sugerir jogada
 @app.route("/suggest", methods=["GET"])
@@ -72,8 +84,11 @@ def move():
     except:
         return jsonify({"error": "Formato UCI inválido"}), 400
 
+    label, prob = evaluate_move(board.fen(), move_uci)
+
     board.push(move)
-    return jsonify({"fen": board.fen(), "result": board.result() if board.is_game_over() else None})
+
+    return jsonify({"fen": board.fen(), "result": board.result() if board.is_game_over() else None, "label": label, "prob": prob})
 
 
 # Resetar o jogo
@@ -85,4 +100,4 @@ def reset():
 
 
 if __name__ == "__main__":
-    app.run(debug=True, host="0.0.0.0", port=3000)
+    app.run(debug=True, host="0.0.0.0", port=5000)
