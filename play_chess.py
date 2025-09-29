@@ -2,7 +2,7 @@ import torch.nn.functional as F
 import torch
 import chess
 import chess.engine
-from src.treinamento import ChessClassifier, fen_para_tensor, label_to_idx
+from treinamento import ChessClassifier, fen_para_tensor, label_to_idx
 import json
 
 def evaluate_move(fen, move_uci, model, device):
@@ -19,7 +19,7 @@ def evaluate_move(fen, move_uci, model, device):
 def suggest_move(fen, engine, time_limit=0.1):
     """Sugere uma jogada usando o Stockfish (temporário)."""
     board = chess.Board(fen)
-    result = engine.play(board, chess.engine.Limit(time=time_limit))
+    result = engine.pd2lay(board, chess.engine.Limit(time=time_limit))
     return result.move.uci()
 
 def main():
@@ -29,10 +29,10 @@ def main():
 
     # Carrega o modelo treinado
     model = ChessClassifier().to(device)
-    model.load_state_dict(torch.load("modelo_chessia.pt"))
+    model.load_state_dict(torch.load("./checkpoints/melhor_modelo.pt"))
 
     # Configura o Stockfish (para sugestões temporárias)
-    STOCKFISH_PATH = "./stockfish-ubuntu-x86-64-avx2"
+    STOCKFISH_PATH = "./scripts/stockfish-ubuntu-x86-64-avx2"
     engine = chess.engine.SimpleEngine.popen_uci(STOCKFISH_PATH)
 
     # Inicializa o tabuleiro
