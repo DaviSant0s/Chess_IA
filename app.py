@@ -3,7 +3,7 @@ import torch
 import torch.nn.functional as F
 import chess
 import chess.engine
-from src.treinamento import ChessClassifier, fen_para_tensor, label_to_idx
+from treinamento import ChessClassifier, fen_para_tensor, label_to_idx
 from flask_cors import CORS
 
 app = Flask(__name__)
@@ -12,11 +12,11 @@ CORS(app)  # permite todas as origens
 # Configuração do dispositivo e modelo
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 model = ChessClassifier().to(device)
-model.load_state_dict(torch.load("modelo_chessia.pt", map_location=device))
+model.load_state_dict(torch.load("./checkpoints/melhor_modelo.pt", map_location=device))
 model.eval()
 
 # Stockfish
-STOCKFISH_PATH = "./stockfish-ubuntu-x86-64-avx2"
+STOCKFISH_PATH = "./scripts/stockfish-ubuntu-x86-64-avx2"
 engine = chess.engine.SimpleEngine.popen_uci(STOCKFISH_PATH)
 
 # Tabuleiro global (para simplificação, um jogo por vez)
