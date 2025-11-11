@@ -60,17 +60,47 @@ class ChessDataset(Dataset):
 class ChessClassifier(nn.Module):
     def __init__(self):
         super().__init__()
-        self.conv1 = nn.Conv2d(14, 32, kernel_size=3, padding=1)  # 14 canais
-        self.conv2 = nn.Conv2d(32, 64, kernel_size=3, padding=1)
-        self.fc1 = nn.Linear(64 * 8 * 8, 128)
-        self.fc2 = nn.Linear(128, 4)  # 4 classes
+
+        self.conv1 = nn.Conv2d(14, 64, kernel_size=3, padding=1)
+        self.bn1 = nn.BatchNorm2d(64)
+
+        self.conv2 = nn.Conv2d(64, 128, kernel_size=3, padding=1)
+        self.bn2 = nn.BatchNorm2d(128)
+
+        self.conv3 = nn.Conv2d(128, 256, kernel_size=3, padding=1)
+        self.bn3 = nn.BatchNorm2d(256)
+
+        # self.pool = nn.MaxPool2d(2, 2)  # reduz pela metade a dimensão espacial
+
+        self.dropout = nn.Dropout(0.3)
+
+        # Como usamos 3 pools, a grade 8x8 vira 1x1 → 256 canais finais
+        self.fc1 = nn.Linear(256 * 8 * 8, 512)
+        self.fc2 = nn.Linear(512, 128)
+        self.fc3 = nn.Linear(128, 4)  # saída para 4 classes
 
     def forward(self, x):
-        x = F.relu(self.conv1(x))
-        x = F.relu(self.conv2(x))
-        x = x.view(x.size(0), -1)
-        x = F.relu(self.fc1(x))
-        return self.fc2(x)
+
+        x = F.relu(self.bn1(self.conv1(x)))
+        x = F.relu(self.bn2(self.conv2(x)))
+        x = F.relu(self.bn3(self.conv3(x)))
+        
+        x = x.view(x.size(0), -1) # Flatten
+        
+        x = self.dropout(F.relu(self.fc1(x)))
+        x = self.dropout(F.relu(self.fc2(x)))
+        return self.fc3(x)
+
+        # x = self.pool(F.relu(self.bn1(self.conv1(x))))
+        # x = self.pool(F.relu(self.bn2(self.conv2(x))))
+        # x = self.pool(F.relu(self.bn3(self.conv3(x))))
+
+        # x = x.view(x.size(0), -1)
+
+        # x = self.dropout(F.relu(self.fc1(x)))
+        # x = self.dropout(F.relu(self.fc2(x)))
+
+        return self.fc3(x)
 
 # Função de treino
 def treinar_modelo():
@@ -78,7 +108,7 @@ def treinar_modelo():
     print(f"[INFO] Usando dispositivo: {device}")
 
     # Carrega o dataset completo
-    dataset = ChessDataset("jogadas_rotuladas.json")
+    dataset = ChessDataset("./data/jogadas_rotuladas.json")
 
     # Divide entre treino (80%) e teste (20%)
     train_size = int(0.8 * len(dataset))
@@ -95,6 +125,10 @@ def treinar_modelo():
     model = ChessClassifier().to(device)
     optimizer = optim.Adam(model.parameters(), lr=0.001)
     criterion = nn.CrossEntropyLoss()
+
+    from torch.optim.lr_scheduler import StepLR
+    # A cada 2 épocas, multiplica o learning rate por 0.1 (gamma)
+    scheduler = StepLR(optimizer, step_size=1, gamma=0.1) 
 
     num_epochs = 3
     checkpoint_dir = "checkpoints"
@@ -259,6 +293,8 @@ def treinar_modelo():
             torch.save(model.state_dict(), melhor_model_path)
 
             print(f"[INFO] Novo melhor modelo salvo: {melhor_model_path} | Acc: {melhor_acc:.2f}%")
+        
+        scheduler.step()
 
     print("[INFO] Treinamento concluído.")
 
