@@ -8,17 +8,18 @@ from datetime import datetime
 
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-# (Flask-SocketIO foi removido)
+
+# 1. IMPORTA AS FUNÇÕES DO SOCKETIO
+from flask_socketio import SocketIO, join_room, leave_room, emit
+
 from flask_jwt_extended import (
     JWTManager, create_access_token, jwt_required, 
     get_jwt_identity
-    # decode_token foi removido (não é mais necessário)
 )
 
-# 1. IMPORTE SEUS MODELOS DE DADOS
 from models import db, bcrypt, User, Game
 
-# 2. IMPORTE SUAS FUNÇÕES DE IA
+# Importa SUAS FUNÇÕES DE IA
 try:
     from treinamento import ChessClassifier, fen_para_tensor, label_to_idx
 except ImportError:
@@ -27,7 +28,7 @@ except ImportError:
     def fen_para_tensor(fen, move): return None
     def label_to_idx(label): return 0
 
-# --- 3. CONFIGURAÇÃO DO APP ---
+# --- CONFIGURAÇÃO DO APP ---
 
 app = Flask(__name__)
 CORS(app)
@@ -39,16 +40,17 @@ app.config['JWT_SECRET_KEY'] = 'minha-chave-jwt-segura-mude-tambem'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'games.db')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-# --- 4. INICIALIZAÇÃO DAS EXTENSÕES ---
-
-
+# --- INICIALIZAÇÃO DAS EXTENSÕES ---
 db.init_app(app)
 bcrypt.init_app(app)
-# (SocketIO foi removido)
+
+# 2. INICIALIZE O SOCKETIO
+# Coloque o modo async='threading' para funcionar bem com o app.run()
+socketio = SocketIO(app, cors_allowed_origins="http://localhost:5173", async_mode='threading')
+
 jwt = JWTManager(app)
 
-# --- 5. CARREGAMENTO DOS MODELOS DE IA E STOCKFISH ---
-# (Esta seção é idêntica à anterior)
+# --- CARREGAMENTO DOS MODELOS DE IA E STOCKFISH ---
 print("Carregando modelos de IA e Stockfish...")
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print(f"Usando dispositivo: {device}")
@@ -69,8 +71,7 @@ except Exception as e:
     print(f"AVISO: Falha ao carregar Stockfish. Erro: {e}")
 
 
-# --- 6. FUNÇÕES AUXILIARES (IA e JOGO) ---
-# (Esta seção é idêntica à anterior)
+# --- FUNÇÕES AUXILIARES (IA e JOGO) ---
 
 def evaluate_move(fen, move_uci):
     """Sua função original para avaliar uma jogada com o modelo PyTorch."""
@@ -98,11 +99,10 @@ def get_game_result(board):
         return "draw", "1/2-1/2"
     return "ongoing", None
 
-# --- 7. ROTAS DE AUTENTICAÇÃO E JOGO (HTTP) ---
+# --- ROTAS DE AUTENTICAÇÃO E JOGO (HTTP) ---
 
 @app.route("/register", methods=["POST"])
 def register():
-    # ... (código de registro - sem mudanças) ...
     data = request.json
     username = data.get("username")
     email = data.get("email")
@@ -124,7 +124,6 @@ def register():
 @app.route("/login", methods=["POST"])
 def login():
     
-    # ... (código de login - sem mudanças) ...
     data = request.json
     username = data.get("username")
     password = data.get("password")
@@ -137,7 +136,6 @@ def login():
 @app.route("/profile", methods=["GET"])
 @jwt_required() 
 def profile():
-    # ... (código de perfil - sem mudanças) ...
     current_user_id = int(get_jwt_identity())
     user = User.query.get(current_user_id)
     return jsonify(username=user.username, email=user.email, rating=user.rating), 200
@@ -145,7 +143,6 @@ def profile():
 @app.route("/create_game", methods=["POST"])
 @jwt_required()
 def create_game():
-    # ... (código de criar jogo - sem mudanças) ...
     current_user_id = int(get_jwt_identity())
     data = request.json
     play_as = data.get("play_as", "white") 
@@ -172,7 +169,6 @@ def create_game():
 
 @app.route("/games", methods=["GET"])
 def get_open_games():
-    # ... (código de listar jogos - sem mudanças) ...
     open_games = Game.query.filter(
         Game.status == 'waiting',
         (Game.player_white_id == None) | (Game.player_black_id == None)
@@ -189,7 +185,6 @@ def get_open_games():
 @app.route("/suggest", methods=["POST"])
 @jwt_required() 
 def suggest():
-    # ... (código de sugestão - sem mudanças) ...
     game_id = request.json.get("game_id")
     game = Game.query.get(game_id)
     if not game:
@@ -203,7 +198,7 @@ def suggest():
     return jsonify({"suggestion": result.move.uci(), "fen": game.current_fen})
 
 
-# --- 8. NOVAS ROTAS DE JOGO (HTTP) ---
+# --- NOVAS ROTAS DE JOGO (HTTP) ---
 
 def get_full_game_state(game: Game):
     """Função auxiliar para montar o payload de resposta do estado do jogo."""
@@ -216,7 +211,8 @@ def get_full_game_state(game: Game):
         'turn': 'white' if board.turn else 'black',
         'player_white': game.player_white.username if game.player_white else None,
         'player_black': game.player_black.username if game.player_black else None,
-        'last_move_at': game.last_move_at
+        # 🌟 CORREÇÃO: Converte para string (ISO) se existir, senão envia None
+        'last_move_at': game.last_move_at.isoformat() if game.last_move_at else None
     }
 
 @app.route("/game_state/<game_id>", methods=["GET"])
@@ -267,7 +263,16 @@ def join_game():
     
     try:
         db.session.commit()
-        return jsonify(get_full_game_state(game)), 200
+        
+        # 1. Prepara o estado atualizado
+        updated_game_state = get_full_game_state(game)
+
+        # 2. 🌟 A CORREÇÃO: Emite para a sala (Notifica o 'davi')
+        socketio.emit('game_update', updated_game_state, room=game.game_id)
+
+        # 3. Retorna para o 'joao' (via HTTP)
+        return jsonify(updated_game_state), 200
+        
     except Exception as e:
         db.session.rollback()
         return jsonify({"error": str(e)}), 500
@@ -330,19 +335,46 @@ def make_move():
         return jsonify({"error": f'Erro de banco de dados: {str(e)}'}), 500
 
     # Prepara a resposta
-    # (É igual ao 'payload' que tínhamos antes)
     response_data = get_full_game_state(game)
     response_data['last_move'] = move_uci
     response_data['evaluation'] = {
         'label': label,
         'probability_good': prob
     }
+
+    # 3. A GRANDE MUDANÇA: EMITIR O ESTADO ATUALIZADO
+    # Emite para a "sala" com o nome do game_id.
+    # Todos os clientes (incluindo o que fez a jogada)
+    # que estiverem nessa sala receberão o 'game_update'.
+    socketio.emit('game_update', response_data, room=game_id)
     
     # Retorna a resposta para o jogador que fez a jogada
     return jsonify(response_data), 200
 
 
-# --- 9. BLOCO DE EXECUÇÃO ---
+@socketio.on('join_game')
+def handle_join_game(data):
+    """
+    Chamado pelo cliente quando ele entra na tela de um jogo.
+    Coloca o cliente na "sala" daquele jogo.
+    """
+    game_id = data.get('game_id')
+    if game_id:
+        join_room(game_id)
+        print(f"Cliente {request.sid} entrou na sala: {game_id}")
+
+@socketio.on('leave_game')
+def handle_leave_game(data):
+    """ (Opcional, mas bom ter)
+    Chamado pelo cliente quando ele sai da tela de um jogo.
+    """
+    game_id = data.get('game_id')
+    if game_id:
+        leave_room(game_id)
+        print(f"Cliente {request.sid} saiu da sala: {game_id}")
+
+
+# --- BLOCO DE EXECUÇÃO ---
 
 if __name__ == "__main__":
     with app.app_context():
@@ -350,5 +382,6 @@ if __name__ == "__main__":
         print("Banco de dados e tabelas criados com sucesso (se não existiam).")
         
     print("Iniciando servidor Flask (sem SocketIO)...")
-    # Usa o app.run() padrão do Flask
-    app.run(debug=True, host="0.0.0.0", port=5000)
+    # 4. MUDE A FORMA DE INICIAR O SERVIDOR
+    # Use socketio.run() ao invés de app.run()
+    socketio.run(app, debug=True, host="0.0.0.0", port=5000, allow_unsafe_werkzeug=True)
