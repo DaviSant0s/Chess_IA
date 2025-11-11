@@ -3,12 +3,10 @@ from flask_bcrypt import Bcrypt
 from datetime import datetime
 import chess
 
-# 1. Crie as instâncias das extensões AQUI, mas sem o (app)
 # Elas ficam "vazias" por enquanto.
 db = SQLAlchemy()
 bcrypt = Bcrypt()
 
-# 2. Cole suas classes de modelo exatamente como você fez
 class User(db.Model):
     """
     Tabela de Usuários. Armazena informações de login e perfil.
@@ -56,6 +54,12 @@ class Game(db.Model):
     
     player_white = db.relationship('User', foreign_keys=[player_white_id], back_populates='games_as_white')
     player_black = db.relationship('User', foreign_keys=[player_black_id], back_populates='games_as_black')
+
+    # --- INÍCIO DA ADIÇÃO ---
+    # Armazena o ID do usuário que pediu a revanche
+    rematch_requested_by_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=True)
+    rematch_requested_by = db.relationship('User', foreign_keys=[rematch_requested_by_id])
+    # --- FIM DA ADIÇÃO ---
     
     def __repr__(self):
         return f'<Game {self.game_id} (Status: {self.status})>'

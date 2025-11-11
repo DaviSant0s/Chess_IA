@@ -211,8 +211,10 @@ def get_full_game_state(game: Game):
         'turn': 'white' if board.turn else 'black',
         'player_white': game.player_white.username if game.player_white else None,
         'player_black': game.player_black.username if game.player_black else None,
-        # 🌟 CORREÇÃO: Converte para string (ISO) se existir, senão envia None
-        'last_move_at': game.last_move_at.isoformat() if game.last_move_at else None
+        'last_move_at': game.last_move_at.isoformat() if game.last_move_at else None,
+        # --- INÍCIO DA ADIÇÃO ---
+        'rematch_requested_by': game.rematch_requested_by.username if game.rematch_requested_by else None
+        # --- FIM DA ADIÇÃO ---
     }
 
 @app.route("/game_state/<game_id>", methods=["GET"])
@@ -351,6 +353,76 @@ def make_move():
     # Retorna a resposta para o jogador que fez a jogada
     return jsonify(response_data), 200
 
+# --- INÍCIO DAS NOVAS ROTAS ---
+
+@app.route("/request_rematch", methods=["POST"])
+@jwt_required()
+def request_rematch():
+    game_id = request.json.get('game_id')
+    current_user_id = int(get_jwt_identity())
+    
+    game = Game.query.get(game_id)
+    if not game:
+        return jsonify({"error": "Jogo não encontrado"}), 404
+    
+    if game.status in ['waiting', 'ongoing']:
+        return jsonify({"error": "O jogo ainda não acabou"}), 400
+    
+    if current_user_id not in [game.player_white_id, game.player_black_id]:
+        return jsonify({"error": "Você não é um jogador nesta partida"}), 403
+
+    game.rematch_requested_by_id = current_user_id
+    
+    try:
+        db.session.commit()
+        # Notifica a todos na sala sobre o pedido
+        socketio.emit('game_update', get_full_game_state(game), room=game_id)
+        return jsonify(get_full_game_state(game)), 200
+    except Exception as e:
+        db.session.rollback()
+        return jsonify({"error": str(e)}), 500
+
+@app.route("/accept_rematch", methods=["POST"])
+@jwt_required()
+def accept_rematch():
+    game_id = request.json.get('game_id')
+    current_user_id = int(get_jwt_identity())
+    
+    game = Game.query.get(game_id)
+    if not game:
+        return jsonify({"error": "Jogo não encontrado"}), 404
+        
+    if not game.rematch_requested_by_id:
+        return jsonify({"error": "Nenhum pedido de revanche encontrado"}), 400
+            
+    if game.rematch_requested_by_id == current_user_id:
+        return jsonify({"error": "Você não pode aceitar seu próprio pedido"}), 400
+
+    # Reseta o jogo "no lugar" (in-place)
+    game.current_fen = chess.Board().fen()
+    game.status = 'ongoing'
+    game.result = None
+    game.last_move_at = datetime.utcnow()
+    game.rematch_requested_by_id = None # Limpa o pedido
+    
+    # Inverte os jogadores
+    old_white_id = game.player_white_id
+    old_black_id = game.player_black_id
+    
+    game.player_white_id = old_black_id
+    game.player_black_id = old_white_id
+    
+    try:
+        db.session.commit()
+        # Notifica a todos sobre o "novo" jogo
+        updated_state = get_full_game_state(game)
+        socketio.emit('game_update', updated_state, room=game_id)
+        return jsonify(updated_state), 200
+    except Exception as e:
+        db.session.rollback()
+        return jsonify({"error": str(e)}), 500
+        
+# --- FIM DAS NOVAS ROTAS ---
 
 @socketio.on('join_game')
 def handle_join_game(data):
