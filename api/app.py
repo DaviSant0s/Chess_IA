@@ -44,6 +44,10 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
 bcrypt.init_app(app)
 
+with app.app_context():
+    db.create_all() 
+    print("Banco de dados e tabelas criados/verificados com sucesso no ambiente de produção.")
+
 # 2. INICIALIZE O SOCKETIO
 # Coloque o modo async='threading' para funcionar bem com o app.run()
 socketio = SocketIO(app, cors_allowed_origins="http://localhost:5173", async_mode='threading')
@@ -449,11 +453,5 @@ def handle_leave_game(data):
 # --- BLOCO DE EXECUÇÃO ---
 
 if __name__ == "__main__":
-    with app.app_context():
-        db.create_all() 
-        print("Banco de dados e tabelas criados com sucesso (se não existiam).")
-        
     print("Iniciando servidor Flask (sem SocketIO)...")
-    # 4. MUDE A FORMA DE INICIAR O SERVIDOR
-    # Use socketio.run() ao invés de app.run()
     socketio.run(app, debug=True, host="0.0.0.0", port=5000, allow_unsafe_werkzeug=True)
