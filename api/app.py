@@ -52,7 +52,7 @@ jwt = JWTManager(app)
 
 # --- CARREGAMENTO DOS MODELOS DE IA E STOCKFISH ---
 print("Carregando modelos de IA e Stockfish...")
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+device = torch.device("cpu")
 print(f"Usando dispositivo: {device}")
 model = ChessClassifier().to(device)
 try:
