@@ -50,7 +50,7 @@ with app.app_context():
 
 # 2. INICIALIZE O SOCKETIO
 # Coloque o modo async='threading' para funcionar bem com o app.run()
-socketio = SocketIO(app, cors_allowed_origins="http://localhost:5173", async_mode='threading')
+socketio = SocketIO(app, cors_allowed_origins="*", async_mode='threading')
 
 jwt = JWTManager(app)
 
