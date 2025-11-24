@@ -257,7 +257,7 @@ def suggest():
     board = chess.Board(game.current_fen)
     if board.is_game_over():
         return jsonify({"error": "O jogo já acabou"}), 400
-    result = engine.play(board, chess.engine.Limit(time=0.1))
+    result = engine_instance.play(board, chess.engine.Limit(time=0.1))
     return jsonify({"suggestion": result.move.uci(), "fen": game.current_fen})
 
 
