@@ -110,9 +110,9 @@ def evaluate_move(fen, move_uci):
         # 🌟 MODIFICAÇÃO CHAVE 2: CHAMA A FUNÇÃO DE CARREGAMENTO
         model_instance = get_ai_model()
 
-        tensor = fen_para_tensor(fen, move_uci).unsqueeze(0).to(device)
+        tensor = fen_para_tensor(fen, move_uci).unsqueeze(0).to(GLOBAL_DEVICE)
         with torch.no_grad():
-            output = model(tensor)
+            output = model_instance(tensor)
             probs = F.softmax(output, dim=1)
             predicted_label = probs.argmax(dim=1).item()
         labels = {0: "boa", 1: "imprecisa", 2: "erro", 3: "blunder"}
