@@ -1,3 +1,7 @@
+# --- LINHAS OBRIGATÓRIAS PARA O SOCKET.IO COM GUNICORN ---
+import eventlet
+eventlet.monkey_patch()
+
 import os
 import uuid
 import chess
