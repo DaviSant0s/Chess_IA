@@ -54,46 +54,25 @@ socketio = SocketIO(app, cors_allowed_origins="*", async_mode='threading')
 
 jwt = JWTManager(app)
 
-# 🌟 MODIFICAÇÃO CHAVE 1: Variáveis Globais de Modelos (Inicializadas como None)
-# Isso permite que o servidor inicie rapidamente.
-print("Configurando Inicialização Lenta para IA...")
-GLOBAL_DEVICE = torch.device("cpu")
-GLOBAL_MODEL = None
-GLOBAL_ENGINE = None
+# --- CARREGAMENTO DOS MODELOS DE IA E STOCKFISH ---
+print("Carregando modelos de IA e Stockfish...")
+device = torch.device("cpu")
+print(f"Usando dispositivo: {device}")
+model = ChessClassifier().to(device)
+try:
+    model.load_state_dict(torch.load("./melhor_modelo.pt", map_location=device))
+    model.eval()
+    print("Modelo de IA (melhor_modelo.pt) carregado com sucesso.")
+except Exception as e:
+    print(f"AVISO: Falha ao carregar modelo de IA. Erro: {e}")
+
 STOCKFISH_PATH = "./scripts/stockfish-ubuntu-x86-64-avx2"
-
-# --- NOVO BLOCO: FUNÇÕES DE CARREGAMENTO SOB DEMANDA ---
-@functools.lru_cache(maxsize=1) # Garante que o carregamento só ocorra UMA vez
-def get_ai_model():
-    """Carrega o modelo PyTorch se ainda não estiver carregado."""
-    global GLOBAL_MODEL
-    if GLOBAL_MODEL is None:
-        print("Carregando modelo PyTorch SOB DEMANDA...")
-        try:
-            model_instance = ChessClassifier().to(GLOBAL_DEVICE)
-            model_instance.load_state_dict(torch.load("./melhor_modelo.pt", map_location=GLOBAL_DEVICE))
-            model_instance.eval()
-            GLOBAL_MODEL = model_instance
-            print("Modelo de IA (melhor_modelo.pt) carregado com sucesso.")
-        except Exception as e:
-            print(f"AVISO: Falha ao carregar modelo de IA. Erro: {e}")
-            raise RuntimeError(f"Falha na IA: {e}")
-    return GLOBAL_MODEL
-
-@functools.lru_cache(maxsize=1) # Garante que o Stockfish só inicie UMA vez
-def get_stockfish_engine():
-    """Inicia o Stockfish se ainda não estiver ativo."""
-    global GLOBAL_ENGINE
-    if GLOBAL_ENGINE is None:
-        print("Iniciando Motor Stockfish SOB DEMANDA...")
-        try:
-            engine_instance = chess.engine.SimpleEngine.popen_uci(STOCKFISH_PATH)
-            GLOBAL_ENGINE = engine_instance
-            print("Motor Stockfish carregado com sucesso.")
-        except Exception as e:
-            print(f"AVISO: Falha ao carregar Stockfish. Erro: {e}")
-            raise RuntimeError(f"Falha no Stockfish: {e}")
-    return GLOBAL_ENGINE
+engine = None
+try:
+    engine = chess.engine.SimpleEngine.popen_uci(STOCKFISH_PATH)
+    print("Motor Stockfish carregado com sucesso.")
+except Exception as e:
+    print(f"AVISO: Falha ao carregar Stockfish. Erro: {e}")
 
 
 # --- FUNÇÕES AUXILIARES (IA e JOGO) ---
@@ -101,10 +80,6 @@ def get_stockfish_engine():
 def evaluate_move(fen, move_uci):
     """Sua função original para avaliar uma jogada com o modelo PyTorch."""
     try:
-
-        # 🌟 MODIFICAÇÃO CHAVE 2: CHAMA A FUNÇÃO DE CARREGAMENTO
-        model_instance = get_ai_model()
-
         tensor = fen_para_tensor(fen, move_uci).unsqueeze(0).to(device)
         with torch.no_grad():
             output = model(tensor)
@@ -218,13 +193,8 @@ def suggest():
     game = Game.query.get(game_id)
     if not game:
         return jsonify({"error": "Jogo não encontrado"}), 404
-    
-    # 🌟 MODIFICAÇÃO CHAVE 3: CHAMA A FUNÇÃO DE CARREGAMENTO
-    try:
-        engine_instance = get_stockfish_engine()
-    except RuntimeError as e:
-        return jsonify({"error": str(e)}), 500
-
+    if not engine:
+         return jsonify({"error": "Motor Stockfish não inicializado no servidor"}), 500
     board = chess.Board(game.current_fen)
     if board.is_game_over():
         return jsonify({"error": "O jogo já acabou"}), 400
