@@ -4,6 +4,7 @@ import chess
 import chess.engine
 import torch
 import torch.nn.functional as F
+import functools
 from datetime import datetime
 
 from flask import Flask, request, jsonify
