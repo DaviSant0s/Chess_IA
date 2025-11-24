@@ -133,30 +133,6 @@ def get_game_result(board):
         return "draw", "1/2-1/2"
     return "ongoing", None
 
-# 🌟 NOVA FUNÇÃO: TAREFA DE FUNDO PARA IA (Remove o Delay)
-def background_ai_calculation(game_id, fen, move_uci):
-    """Roda em segundo plano para calcular a IA sem travar o jogo."""
-    with app.app_context():
-        try:
-            print(f"🤖 Iniciando cálculo de IA em background para {game_id}...")
-            # Faz o cálculo pesado
-            label, prob = evaluate_move(fen, move_uci)
-            
-            # Busca o jogo para ter o estado mais atual
-            game = Game.query.get(game_id)
-            if game:
-                full_state = get_full_game_state(game)
-                # Injeta a avaliação calculada
-                full_state['evaluation'] = {
-                    'label': label,
-                    'probability_good': prob
-                }
-                # Envia atualização para o frontend (Preenche a barra de avaliação)
-                socketio.emit('game_update', full_state, room=game_id)
-                print(f"✅ IA finalizada: {label}")
-        except Exception as e:
-            print(f"❌ Erro na thread de IA: {e}")
-
 # --- ROTAS DE AUTENTICAÇÃO E JOGO (HTTP) ---
 
 @app.route("/register", methods=["POST"])
@@ -379,8 +355,11 @@ def make_move():
             return jsonify({"error": "Jogada ilegal"}), 400
     except:
         return jsonify({"error": "Formato de jogada (UCI) inválido"}), 400
+        
+    # AVALIAÇÃO DA IA
+    label, prob = evaluate_move(game.current_fen, move_uci)
 
-    # --- 1. EXECUTA O MOVIMENTO IMEDIATAMENTE ---
+    # Faz a jogada e verifica o resultado
     board.push(move)
     new_status, result = get_game_result(board)
     
@@ -400,8 +379,8 @@ def make_move():
     response_data = get_full_game_state(game)
     response_data['last_move'] = move_uci
     response_data['evaluation'] = {
-        'label': 'calculando...',
-        'probability_good': 0.0
+        'label': label,
+        'probability_good': prob
     }
 
     # 3. A GRANDE MUDANÇA: EMITIR O ESTADO ATUALIZADO
@@ -409,10 +388,6 @@ def make_move():
     # Todos os clientes (incluindo o que fez a jogada)
     # que estiverem nessa sala receberão o 'game_update'.
     socketio.emit('game_update', response_data, room=game_id)
-
-    # --- 3. IA EM BACKGROUND ---
-    # Usa eventlet para rodar a IA sem travar a resposta
-    eventlet.spawn(background_ai_calculation, game_id, game.current_fen, move_uci)
     
     # Retorna a resposta para o jogador que fez a jogada
     return jsonify(response_data), 200
